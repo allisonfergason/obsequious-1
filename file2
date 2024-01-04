@@ -1,0 +1,32 @@
+#navbar {
+  background-color: #93B2D2;
+  border-radius: 10px;
+}
+a {
+  display: block;
+  text-align: center;
+  height: 30px;
+  color: #293540;
+}
+main {
+  margin-top: 20px;
+  background-color: #93B2D2;
+  border-radius: 10px;
+}
+header {
+  font-weight: bold;
+  font-size: 20;
+  text-align: center;
+}
+li {
+  margin-left: 20px;
+}
+code {
+  color: #93B2D2;
+}
+.italy {
+  font-style: italic;
+}
+p {
+  margin-left: 20px;
+}
