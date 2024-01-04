@@ -1,103 +1,105 @@
-public class Blackjack {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Directory</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+  <nav id="navbar" a>
+      <header>INOCU Directory</header>
+      <a class="nav-link" href="#Ajay">Ajay</a>
+      <a class="nav-link" href="#Allison">Allison</a>
+      <a class="nav-link" href="#Andrew">Andrew</a>
+      <a class="nav-link" href="#Curtis">Curtis</a>
+      <a class="nav-link" href="#Edward">Edward</a>
+      <a class="nav-link" href="#Erin">Erin</a>
+      <a class="nav-link" href="#Nathaniel">Nathaniel</a>
+      <a class="nav-link" href="#Ryan">Ryan</a>
+      <div class="rats"></div>
+      </nav>
+  <main id="main-doc">
+    <section class="main-section" id="Ajay">
+      <header>Ajay</header>
+      <p>Cornell University, <span class="italy"> Environmental Engineering and CS</span></p>
+      <p>Issues:</p>
+      <ul>
+      <li>Frat guy</li>
+      <li>Ivy League Scholar somehow</li>
+      </ul>
+    <code>inocu()</code>
+    </section>
+    <section class="main-section" id="Allison">
+      <header>Allison</header>
+      <p>New York University, <span class="italy">CS</span></p>
+      <p>Issues:</p>
+      <ul>
+      <li>Cannot decide on a major</li>
+      <li>Canva user</li>
+      </ul>
+      <code>inocu()</code>
+    </section>
+    <section class="main-section" id="Andrew">
+      <header>Andrew</header>
+      <p>UC Santa Barbara, <span class="italy"> Electrical Engineering <span></p>
+      <p>Issues:</p>
+      <ul>
+      <li>Dropped off the map (literally)</li>
+      <li>Weird</li>
+      </ul>
+      <code>inocu()</code>
+    </section>
+    <section class="main-section" id="Curtis">
+      <header>Curtis</header>
+      <p>University of Washington, <span class="italy"> Mechanical Engineering </span></p>
+      <p>Issues:</p>
+      <ul>
+      <li>Wordle champion</li>
+      <li>Adult band kid</li>
+      </ul>
+      <code>inocu()</code>
+    </section>
+    <section class="main-section" id="Edward">
+      <header>Edward</header>
+      <p>New York University, <span class="italy"> IMA and CS </span></p>
+      <p>Issues:</p>
+      <ul>
+      <li>Los Altos transplant</li>
+      <li>Lives in Lafayette</li>
+      </ul>
+      <code>inocu()</code>
+    </section>
+    <section class="main-section" id="Erin">
+      <header>Erin</header>
+      <p>Rice University, <span class="italy"> Electrical Engineering and CS <span></p>
+      <p>Issues:</p>
+      <ul>
+      <li>Pokemon go addictee</li>
+      <li>Negative rizz</li>
+      </ul>
+      <code>inocu()</code>
+    </section>
+    <section class="main-section" id="Nathaniel">
+      <header>Nathaniel</header>
+      <p>UC Santa Barbara, <span class="italy"> Biology </span></p>
+      <p>Issues:</p>
+      <ul>
+      <li>Confusing aura</li>
+      <li>White guy</li>
+      </ul>
+      <code>inocu()</code>
+    </section>
+    <section class="main-section" id="Ryan">
+      <header>Ryan</header>
+      <p>University of Rochester, <span class="italy"> Psychology </span></p>
+      <p>Issues:</p>
+      <ul>
+      <li>Forest dweller</li>
+      <li>Needs a haircut</li>
+      </ul>
+      <code>inocu()</code>
+    </section>
+    </main>
+    </body>
 
-    public static Random initRandom(String[] args) {
-        // do not modify this code
-        if (args.length >= 1) {
-            return new Random(Long.parseLong(args[0]));
-        } else {
-            return new Random();
-        }
-    }
-
-    public static void main(String[] args) {
-        // The random number generator is given to you, do not change this line.
-        // Every random number should be generated through this variable.
-        Random random = initRandom(args);
-
-        System.out.println("Welcome to Blackjack!");
-
-        int ufirstcard = (int) random.nextInt(2, 12);
-        int usecondcard = (int) random.nextInt(2, 12);
-        int utotal = ufirstcard + usecondcard; 
-        String cardlist = "Your cards are: "+ufirstcard+", "+ usecondcard;
-        System.out.println(cardlist);
-        String ubust = "no";
-
-        int dfirstcard = (int) random.nextInt(2, 12);
-        int dsecondcard = (int) random.nextInt(2, 12);
-        int dtotal = dfirstcard + dsecondcard;
-        String dcardlist = "The dealer's cards are: "+dfirstcard+", "+ dsecondcard;
-        String dbust = "no";
-
-        // Example for producing a random integer
-        // between 0 (including) and 50 (excluding):
-        // random.nextInt(50)
-
-        // complete this function
-        // ...
-        Scanner scnr = new Scanner(System.in);
-        while (true) {
-            System.out.println("Would you like to hit or stand?");
-            String answer = scnr.nextLine();
-
-            if (answer.equals("hit")) {
-                int unewcard = (int) random.nextInt(2, 12);
-                utotal = utotal + unewcard;
-                cardlist = cardlist+", "+unewcard;
-                if (utotal > 21) {
-                    System.out.println("You have bust!");
-                    ubust = "yes";
-                    break; 
-                }
-                else {
-                    System.out.println(cardlist);
-                }
-            }
-            else {
-                break;
-            }
-        }
-        scnr.close();
-
-        // dealer
-        while (ubust.equals("no")) {
-            int dchoice = (int) random.nextInt(1, 3);
-            if (dchoice == 1) {
-                System.out.println("The dealer hits.");
-                int dnewcard = (int) random.nextInt(2, 12);
-                dtotal = dtotal + dnewcard;
-                dcardlist = dcardlist+", "+dnewcard;
-                if (dtotal > 21) {
-                    System.out.println("The dealer has bust!");
-                    dbust = "yes";
-                    break;
-                }
-            }
-            else {
-                System.out.println("The dealer stands.");
-                break;
-            }
-        }
-        // rest of code
-        System.out.println(cardlist);
-        System.out.println(dcardlist);
-
-        //decide+announce winner
-        if (dbust.equals("yes")) {
-            System.out.println("You win!");
-        }
-        else if (ubust.equals("yes")) {
-            System.out.println("Dealer wins!");
-        }
-        else if (utotal > dtotal) {
-            System.out.println("You win!");
-        }
-        else if (dtotal > utotal) {
-            System.out.println("Dealer wins!");
-        }
-        else {
-            System.out.println("Tie!");
-        }
-        }
-
-    }
