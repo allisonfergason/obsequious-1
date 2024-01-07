@@ -1,12 +1,20 @@
+#head1 {
+  display: inline;
+  width: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 10px;
+}
 #navbar {
   background-color: #93B2D2;
   border-radius: 10px;
+  text-align: center;
+
 }
 a {
-  display: block;
-  text-align: center;
-  height: 30px;
+  height: 25px;
   color: #293540;
+  padding: 5px;
 }
 main {
   margin-top: 20px;
@@ -17,16 +25,17 @@ header {
   font-weight: bold;
   font-size: 20;
   text-align: center;
+  padding-top: 5px;
 }
 li {
   margin-left: 20px;
-}
-code {
-  color: #93B2D2;
 }
 .italy {
   font-style: italic;
 }
 p {
   margin-left: 20px;
+}
+body {
+  background-color: #051650;
 }
