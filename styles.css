@@ -39,3 +39,10 @@ p {
 body {
   background-color: #051650;
 }
+video {
+  z-index: 999;
+  user-select: none;
+  position: fixed;
+  margin: 0;
+  border: none;
+}
